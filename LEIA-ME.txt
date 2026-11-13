@@ -1,0 +1,40 @@
+PEDIDOS INPLASUL — COMO COLOCAR NO AR
+=====================================
+
+PARTE 1 — PUBLICAR O APP (GitHub Pages, igual ao app de cotação)
+1. No GitHub (conta marcoftorri), crie um repositório novo chamado: pedido-inplasul (público).
+2. Clique em "Add file > Upload files" e envie TODOS os arquivos desta pasta,
+   incluindo a pasta "lib" (arraste a pasta inteira). O arquivo apps-script.gs e este
+   LEIA-ME podem ir junto, não atrapalham.
+3. Settings > Pages > Branch: main / (root) > Save.
+4. Em 1–2 minutos o app estará em:  https://marcoftorri.github.io/pedido-inplasul/
+5. No iPhone, abra esse endereço no Safari > Compartilhar > "Adicionar à Tela de Início".
+
+PARTE 2 — LIGAR A PLANILHA GOOGLE (backup automático, ~10 min, faça no computador)
+1. Entre em sheets.google.com com sua conta Google e crie uma planilha em branco.
+   Dê o nome: Pedidos Inplasul
+2. Menu Extensões > Apps Script.
+3. Apague o que estiver lá e cole todo o conteúdo do arquivo apps-script.gs.
+4. Na linha  const CODIGO_SECRETO = 'TROQUE-AQUI';  troque TROQUE-AQUI por um código só seu
+   (ex.: inplasul-marco-2026). Guarde esse código.
+5. Clique no disquete (Salvar).
+6. Botão azul "Implantar" > "Nova implantação" > engrenagem > "App da Web".
+     - Executar como: Eu
+     - Quem pode acessar: Qualquer pessoa
+   Clique em Implantar e autorize com sua conta (se aparecer "app não verificado",
+   clique em Avançado > Acessar... — o script é seu, roda só na sua conta).
+7. Copie o "URL do app da Web" (termina em /exec).
+8. No app, vá em Ajustes > Planilha Google: cole o URL e o código secreto >
+   "Salvar e testar conexão". Deve aparecer ✅ Conectado.
+
+A partir daí, cada pedido, cliente e preço é copiado sozinho para a planilha
+(abas Pedidos, Itens e Clientes). Sem internet, fica pendente e envia quando conectar.
+Trocou de celular? Instale o app, configure a planilha e toque em "Restaurar dados da planilha".
+
+ATUALIZANDO O SCRIPT NO FUTURO
+Se precisar mudar o código do Apps Script: Implantar > Gerenciar implantações > lápis >
+Versão: "Nova versão" > Implantar. Assim o URL continua o mesmo.
+
+ATUALIZANDO O APP NO FUTURO
+Ao enviar arquivos novos para o GitHub, troque o número em sw.js
+(inplasul-pedidos-v1 -> v2) para o iPhone pegar a versão nova.
